@@ -10,7 +10,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class AccordionComponent implements OnInit {
 
 
-  public FILE_PATH = '../../assets/@wmaw9-public-key.gpg';
+  public FILE_PATH = 'assets/@wmaw9-public-key.gpg';
   public FILE_NAME = '@wmaw9-public-key.gpg';
 
   public PERMA_SOURCE = 'https://keyserver2.pgp.com/vkd/SubmitSearch.event?SearchCriteria=nft%40wmaw.me';
