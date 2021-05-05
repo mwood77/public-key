@@ -1,0 +1,76 @@
+<h1 mat-dialog-title>Decrypting your unlockable</h1>
+<div mat-dialog-content>
+
+    <div class="download">
+        <p>
+            You'll need GnuPG to decrypt your unlockable; download and install first.
+        </p>
+        <a mat-flat-button 
+            class="download-button"
+            color="accent" 
+            href="{{ GNUPGP_BINARY }}" 
+            target="_blank">Get GnuPG</a>
+    </div>
+
+    <hr>
+
+    <div class="list">
+        <div class="list-item">
+            <p>
+                <span>1.</span>
+                Click the download button to get the keyfile, <code>@wmaw9-public-key.gpg</code>, and place it at
+                the same location as your unlockable.
+            </p>
+
+            <p>
+                Double-click <code>@wmaw9-public-key.gpg</code> to import it into your keychain 
+                While technically optional, if you choose not to import my public key 
+                you won't be able to see if the unlockable file is authenic.
+            </p>
+<pre class="code-block">
+    Alternative:
+    gpg --search-keys nft@wmaw.me
+</pre>
+        </div>
+        <div class="list-item">
+            <p>
+                <span>2.</span>
+                Open your terminal (shell, bash, cmd, powershell, etc) and navigate to where <code>@wmaw9-public-key.gpg</code> and the 
+                unlockable are located. You can accomplish this with the <code>cd</code> command.
+            </p>
+        </div>
+        <div class="list-item">
+            <p>
+                <span>3.</span>
+                Double-click <code>@wmaw9-public-key.gpg</code> file to import it into your keychain, 
+                then type the following command into your terminal from step 2.
+            </p>
+<pre class="code-block">
+    gpg --output A_FILE_NAME.ext --decrypt UNLOCKABLE.sig
+
+    == Example ==
+    nft name: "dip"
+    nft type: image (.PNG)
+    unlockable name: "dip.sig"
+
+    gpg --output dip.png --decrypt dip.sig
+</pre>
+        </div>
+        <div class="list-item">
+            <p>
+                <span>4.</span>
+                After decryption you should see the following message in your terminal
+            </p>
+<pre class="code-block">
+    > gpg --output dip.png --decrypt dip.sig
+    gpg: Signature made wo  5 may 10:50:27 2021 CEST
+    gpg:                using RSA key 0852C02A0846BB3020E18B0CEF3AB3E2F4581E15
+    gpg: Good signature from "@wmaw9 (nft_key) nft@wmaw.me" [unknown]
+</pre>
+        </div>
+    </div>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button mat-dialog-close>Close</button>
+</div>

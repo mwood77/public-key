@@ -1,0 +1,22 @@
+app-caution-header {
+    width: auto;
+}
+
+.caution-card {
+    color: #1c1e21;
+    background-color: #ffba00;
+
+    .mat-card-subtitle {
+        color: #1c1e21;
+    }
+
+    .caution-content {
+        padding: 1vh 0;
+    }
+
+    .bold {
+        font-size: 15px;
+        font-weight: 800;
+    }
+
+}
