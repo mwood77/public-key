@@ -9,7 +9,14 @@
             class="download-button"
             color="accent" 
             href="{{ GNUPGP_BINARY }}" 
-            target="_blank">Get GnuPG</a>
+            target="_blank">
+                Get GnuPG
+        </a>
+        <p>
+            Depending on what installer you chose, you may get a user interface ("app"). 
+            I'll only cover command line decryption here, 
+            but most "apps" will only need you to double click the unlockable to access its content.
+        </p>
     </div>
 
     <hr>
@@ -21,49 +28,57 @@
                 Click the download button to get the keyfile, <code>@wmaw9-public-key.gpg</code>, and place it at
                 the same location as your unlockable.
             </p>
-
             <p>
-                Double-click <code>@wmaw9-public-key.gpg</code> to import it into your keychain 
-                While technically optional, if you choose not to import my public key 
-                you won't be able to see if the unlockable file is authenic.
+                If you're familiar with GPG, you can acquire it via the command line.
             </p>
 <pre class="code-block">
-    Alternative:
     gpg --search-keys nft@wmaw.me
 </pre>
         </div>
         <div class="list-item">
             <p>
                 <span>2.</span>
-                Open your terminal (shell, bash, cmd, powershell, etc) and navigate to where <code>@wmaw9-public-key.gpg</code> and the 
-                unlockable are located. You can accomplish this with the <code>cd</code> command.
+                Open your terminal (shell, bash, cmd, powershell, etc) and navigate to where 
+                <code>@wmaw9-public-key.gpg</code> and the unlockable are located. 
+                Most terminals accept the <code>cd</code> command to change directories.
             </p>
         </div>
         <div class="list-item">
             <p>
                 <span>3.</span>
-                Double-click <code>@wmaw9-public-key.gpg</code> file to import it into your keychain, 
-                then type the following command into your terminal from step 2.
+                We need to import my public key into your keychain. Type the following into your terminal from step 2:
             </p>
 <pre class="code-block">
-    gpg --output A_FILE_NAME.ext --decrypt UNLOCKABLE.sig
+    gpg --import @wmaw9-public-key.gpg
+</pre>
+            <p> 
+                If you downloaded an "app," you can probably double-click the <code>@wmaw9-public-key.gpg</code> file to import it.
+            </p>
+        </div>
+        <div class="list-item">
 
-    == Example ==
+            <p>
+                <span>4.</span>
+                To decrypt the unlockable, enter the following into your terminal from step 2:
+            </p>
+<pre class="code-block">
+    gpg --output A_FILE_NAME.extension --decrypt UNLOCKABLE.sig
+
+    ============================== Example ==============================
     nft name: "dip"
     nft type: image (.PNG)
     unlockable name: "dip.sig"
 
     gpg --output dip.png --decrypt dip.sig
+    ============================== Example ==============================
 </pre>
-        </div>
-        <div class="list-item">
             <p>
-                <span>4.</span>
-                After decryption you should see the following message in your terminal
+                After decryption you should see the following message in your terminal,
+                and a new file created which matches the output name you specified.
             </p>
 <pre class="code-block">
     > gpg --output dip.png --decrypt dip.sig
-    gpg: Signature made wo  5 may 10:50:27 2021 CEST
+    gpg: Signature made wed 5 may 10:50:27 2021 CEST
     gpg:                using RSA key 0852C02A0846BB3020E18B0CEF3AB3E2F4581E15
     gpg: Good signature from "@wmaw9 (nft_key) nft@wmaw.me" [unknown]
 </pre>
