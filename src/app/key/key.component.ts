@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KeyComponent implements OnInit {
 
-	public isMobile: boolean = false;
+	public isMobile = false;
 
 	constructor() { }
 
@@ -15,13 +15,13 @@ export class KeyComponent implements OnInit {
 		this.checkMobile();
 	}
 
-	checkMobile() {
-		var isTouchDevice =
+	checkMobile(): void {
+		const isTouchDevice =
 			(('ontouchstart' in window) ||
 			(navigator.maxTouchPoints > 0) ||
 			(navigator.msMaxTouchPoints > 0));
 		if ( isTouchDevice ) {
-			console.warn("Mobile device detected");			
+			console.warn('Mobile device detected');
 			this.isMobile = true;
 		}
 	}

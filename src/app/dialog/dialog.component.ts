@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DialogComponent implements OnInit {
 
-  public GNUPGP_BINARY: string = 'https://gnupg.org/download/index.html#binary';
+  public GNUPGP_BINARY = 'https://gnupg.org/download/index.html#binary';
 
   constructor() { }
 

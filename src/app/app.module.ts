@@ -13,35 +13,35 @@ import { CautionHeaderComponent } from './caution-header/caution-header.componen
 /**
  * Angular Material
  */
- import { MatCardModule } from '@angular/material/card';
- import { MatButtonModule } from '@angular/material/button';
- import { MatExpansionModule } from '@angular/material/expansion';
- import { MatIconModule } from '@angular/material/icon';
- import { MatDialogModule } from '@angular/material/dialog';
- import { DialogComponent } from './dialog/dialog.component';
- import { MatListModule } from '@angular/material/list';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+import { MatListModule } from '@angular/material/list';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    KeyComponent,
-    FooterComponent,
-    AccordionComponent,
-    CautionHeaderComponent,
-    DialogComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule,
-    MatExpansionModule,
-    MatIconModule,
-    MatDialogModule,
-    MatListModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		KeyComponent,
+		FooterComponent,
+		AccordionComponent,
+		CautionHeaderComponent,
+		DialogComponent
+	],
+	imports: [
+		BrowserModule,
+		AppRoutingModule,
+		BrowserAnimationsModule,
+		MatCardModule,
+		MatButtonModule,
+		MatExpansionModule,
+		MatIconModule,
+		MatDialogModule,
+		MatListModule
+	],
+	providers: [],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }
