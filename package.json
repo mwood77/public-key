@@ -1,11 +1,11 @@
 {
   "name": "public-key",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "publish": "ng build --prod --output-path docs --base-href /public-key"
+    "publish": "ng build --prod --output-path docs --base-href /public-key/"
   },
   "private": true,
   "dependencies": {
