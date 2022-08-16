@@ -1,6 +1,6 @@
 {
-  "name": "public-key-site",
-  "version": "2.1.0",
+  "name": "public-key",
+  "version": "2.2.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

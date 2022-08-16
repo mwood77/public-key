@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "public-key-site": {
+    "public-key": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/public-key-site",
+            "outputPath": "dist/public-key",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -54,7 +54,7 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "700kb",
+                  "maximumWarning": "1mb",
                   "maximumError": "1mb"
                 },
                 {
@@ -69,18 +69,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "public-key-site:build"
+            "browserTarget": "public-key:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "public-key-site:build:production"
+              "browserTarget": "public-key:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "public-key-site:build"
+            "browserTarget": "public-key:build"
           }
         },
         "test": {
@@ -118,16 +118,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "public-key-site:serve"
+            "devServerTarget": "public-key:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "public-key-site:serve:production"
+              "devServerTarget": "public-key:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "public-key-site"
+  "defaultProject": "public-key"
 }
